@@ -14,8 +14,15 @@ using namespace std;
 
 string numberAsArrayToString(int* , int );
 
-int shiftLeft(int inputArr*, int outputArr* , int numPos ){
-   
+void shiftLeft(int* inputArr, int* outputArr , int numPos ){
+    int size = sizeof(inputArr) / sizeof(inputArr[0]);
+    outputArr [(size + numPos)] = {};
+    for(int i=0; i < size; i++){
+        outputArr[i] = inputArr[i];
+    }
+    for(int j=size; j < (size+numPos); j++){
+        outputArr[j] = 0;
+    }
 }
 
 void add(int* inputArr1 , int* inputArr2 , int* outputArr) {
